@@ -1,0 +1,60 @@
+@import "mixins";
+@import "reset";
+
+.stop-watch {
+  display: flex;
+  align-items: center;
+  height: 400px;
+  width: 400px;
+  background-color: #5984d1;
+  border: #4933d8 double 10px;
+  border-radius: 50%;
+  justify-content: center;
+
+}
+
+.hands {
+  display: flex;
+  align-content: center;
+  position: relative;
+  align-items: flex-end;
+
+}
+
+.hour-hand {
+  @include clock-hand(8px, 100px);
+  background-color: #b42a41;
+  animation-duration: 86400s;
+}
+
+.minute-hand {
+  @include clock-hand(6px, 140px);
+  background-color: #3232b5;
+  animation-duration: 3600s;
+}
+
+.second-hand {
+  @include clock-hand(4px, 180px);
+  background-color: #7dbe40;
+  animation-duration: 60s;
+  animation-timing-function: steps(60);
+}
+
+.clock-center {
+  @include clock-hand(16px, 16px);
+  border-radius: 4px;
+  top: -8px;
+  animation-duration: 6s;
+  background-color: #cb6826;
+  transform-origin: center center;
+}
+
+@keyframes full-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

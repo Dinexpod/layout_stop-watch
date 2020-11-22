@@ -1,0 +1,11 @@
+@mixin clock-hand($width, $height) {
+  position: absolute;
+  height: $height;
+  width: $width;
+  left: -$width / 2;
+  border-radius: $width / 2;
+  transform-origin: bottom center;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: full-rotate;
+}
